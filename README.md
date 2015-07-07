@@ -6,7 +6,9 @@ An IronWorker that scales up other workers based on IronMQ queue sizes.
 **NOTE:** You must have the Iron CLI tool setup and ready, see here for more info: 
 https://github.com/iron-io/dockerworker
 
-**NOTE:** You will also need an iron.json file in this directory with your [Iron.io](http://iron.io) credentials. 
+**NOTE:** You will need an iron.json file in this directory with your [Iron.io](http://iron.io) credentials. Copy 
+`iron-example.json` to `iron.json` and fill in the blanks. There are two sections here, one for IronWorker/IronCache,
+ and another for IronMQ v3 (since v3 has separate auth). 
 
 1. Clone this repo
 1. Copy `scale-example.json` to `scale.json`

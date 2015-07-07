@@ -1,0 +1,10 @@
+{
+  "token": "TOKEN",
+  "project_id": "PROJECT_ID",
+  "iron_mq": {
+    "description": "This section is for IronMQ v3 since it has separate auth.",
+    "project_id": "V3 PROJECT ID",
+    "token": "V3 TOKEN",
+    "host": "mq-aws-us-east-1-1.iron.io"
+  }
+}
