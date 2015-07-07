@@ -1,0 +1,19 @@
+{
+  "queues": [
+    {
+      "name": "queueA",
+      "triggers": [
+        {
+          "trigger": 1,
+          "type": "fixed"
+        },
+        {
+          "trigger": 50,
+          "type": "progressive"
+        }
+      ],
+      "worker": "queue_worker"
+    }
+  ]
+}
+

@@ -1,0 +1,31 @@
+GIT
+  remote: https://github.com/iron-io/iron_mq_ruby.git
+  revision: 85bb31caccf5db154b610f2a4a30682f32e0d163
+  branch: v3
+  specs:
+    iron_mq (6.0.0.pre1)
+      iron_core (>= 0.5.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    iron_cache (1.4.2)
+      iron_core (>= 0.5.1)
+    iron_core (1.0.7)
+      rest (>= 3.0.4)
+    iron_worker (3.1.0)
+      iron_core (>= 0.5.1)
+      rest (>= 3.0.6)
+    net-http-persistent (2.9.4)
+    netrc (0.10.3)
+    rest (3.0.6)
+      net-http-persistent (>= 2.9.1)
+      netrc
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  iron_cache
+  iron_mq!
+  iron_worker
