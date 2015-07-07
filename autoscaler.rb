@@ -36,7 +36,7 @@ while Time.now < end_at
     wname = qscale['worker']
     triggers = qscale['triggers']
     triggers.each do |trigger|
-      launch = false
+      launch = 0
       p trigger
       if trigger['type'] == 'fixed'
         if qsize >= trigger['trigger']
@@ -45,7 +45,7 @@ while Time.now < end_at
             next
           end
           # otherwise, this is being triggered
-          launch = true
+          launch = 1
         end
       else
         puts "progressive type"
@@ -59,12 +59,15 @@ while Time.now < end_at
         clevel = qsize / trigger['trigger']
         puts "plevel: #{plevel}, clevel: #{clevel}"
         if clevel > plevel
-          launch = true
+          launch = (clevel - plevel)
         end
       end
-      if launch
-        puts "Launching worker! queue size: #{qsize}, trigger: #{trigger}"
-        iw.tasks.create(wname, {'size' => qsize}) # payload is optional
+      if launch > 0
+        puts "Launching #{launch} workers! queue size: #{qsize}, last check size #{citem['size']}, trigger: #{trigger}"
+        launch.times do |li|
+          puts "Launching #{li+1}..."
+          iw.tasks.create(wname, {'size' => qsize}) # payload is optional
+        end
       end
     end
     # Store current size back to cache
